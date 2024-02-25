@@ -1,12 +1,17 @@
-# 4.5 For Loops
+# 4.7 Requests
+
+from requests import get
 
 websites = (
-    "google.com",
-    "airbnb.com",
-    "twitter.com",
-    "facebook.com",
-    "tiktok.com",
+  "google.com",
+  "airbnb.com",
+  "https://twitter.com",
+  "facebook.com",
+  "https://tiktok.com",        
 )
 
 for website in websites:
-    print(website)
+  if not website.startswith("https://"):
+    # website = "https://" + website
+    website = f"https://{website}"
+  print(website)        
