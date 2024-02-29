@@ -1,25 +1,25 @@
-# 4.8 Status Codes
+# 5.1 Why We Need OOP
 
-from requests import get
+# nico = {
+#     "name": "Nico",
+#     "XP": 1000,
+#     "team": "Team X",
+# }
 
-websites = (
-    "google.com",
-    "airbnb.com",
-    "https://twitter.com",
-    "facebook.com",
-    "https://tiktok.com",        
-)
+def create_player_team(name, xp, team):
+    pass
 
-results = {}
+def create_player(name, xp, team):
+    return {
+        "name": "Nico",
+        "XP": 1000,
+        "team": "Team X",
+    }
 
-for website in websites:
-    if not website.startswith("https://"):
-        # website = "https://" + website
-        website = f"https://{website}"
-    response = get(website)        
-    if response.status_code == 200:
-        results[website] = "OK"
-    else:  
-        results[website] = "FAILED"
+def introduce_player(player):
+    name = player["name"]
+    team = player["team"]
+    print(f"Hello! My name is {name} and I play for {team}")
 
-print(results)
+nico = create_player("Nico", 1500, "Team X")    
+introduce_player(nico)
