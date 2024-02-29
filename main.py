@@ -1,18 +1,34 @@
-# 5.2 Classes
+# 5.3 Methods
+
 
 class Puppy:
-    def __init__(self):
-        self.name = "Ruffus"
+    def __init__(self, name, breed):
+        self.name = name
         self.age = 0.1
-        self.breed = "Beagle"
+        self.breed = breed
 
-ruffus = Puppy()
-bibi = Puppy()
+    def __str__(self):
+        return f"{self.breed} puppy named {self.name}"
 
-print(ruffus.name)
-print(ruffus.age)
-print(ruffus.breed)
 
-print(bibi.name)
-print(bibi.age)
-print(bibi.breed)
+ruffus = Puppy(
+    name="Ruffus",
+    breed="Beagle",
+)
+bibi = Puppy(
+    name="Bibi",
+    breed="Dalmatian",
+)
+
+print(
+    bibi,
+    ruffus,
+)
+
+# print(ruffus.name)
+# print(ruffus.age)
+# print(ruffus.breed)
+# print()
+# print(bibi.name)
+# print(bibi.age)
+# print(bibi.breed)
