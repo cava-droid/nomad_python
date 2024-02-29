@@ -1,25 +1,18 @@
-# 5.1 Why We Need OOP
+# 5.2 Classes
 
-# nico = {
-#     "name": "Nico",
-#     "XP": 1000,
-#     "team": "Team X",
-# }
+class Puppy:
+    def __init__(self):
+        self.name = "Ruffus"
+        self.age = 0.1
+        self.breed = "Beagle"
 
-def create_player_team(name, xp, team):
-    pass
+ruffus = Puppy()
+bibi = Puppy()
 
-def create_player(name, xp, team):
-    return {
-        "name": "Nico",
-        "XP": 1000,
-        "team": "Team X",
-    }
+print(ruffus.name)
+print(ruffus.age)
+print(ruffus.breed)
 
-def introduce_player(player):
-    name = player["name"]
-    team = player["team"]
-    print(f"Hello! My name is {name} and I play for {team}")
-
-nico = create_player("Nico", 1500, "Team X")    
-introduce_player(nico)
+print(bibi.name)
+print(bibi.age)
+print(bibi.breed)
