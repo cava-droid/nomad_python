@@ -1,34 +1,31 @@
-# 5.3 Methods
+# 5.4 Inheritance
 
 
-class Puppy:
-    def __init__(self, name, breed):
+class Dog:
+    def __init__(self, name, breed, age):
         self.name = name
-        self.age = 0.1
         self.breed = breed
+        self.age = age
 
-    def __str__(self):
-        return f"{self.breed} puppy named {self.name}"
+
+class GuardDog(Dog):
+    def rrrr(self):
+        print("stay away!")
+
+
+class Puppy(Dog):
+    def woof_woof(self):
+        print("Woof Woof!")
 
 
 ruffus = Puppy(
     name="Ruffus",
     breed="Beagle",
+    age=0.1,
 )
+
 bibi = Puppy(
     name="Bibi",
     breed="Dalmatian",
+    age=0.1,
 )
-
-print(
-    bibi,
-    ruffus,
-)
-
-# print(ruffus.name)
-# print(ruffus.age)
-# print(ruffus.breed)
-# print()
-# print(bibi.name)
-# print(bibi.age)
-# print(bibi.breed)
