@@ -1,4 +1,4 @@
-# 5.4 Inheritance
+# 5.5 Inheritance Part Two
 
 
 class Dog:
@@ -7,13 +7,32 @@ class Dog:
         self.breed = breed
         self.age = age
 
+    def sleep(self):
+        print("zzzzz.....")
+
 
 class GuardDog(Dog):
+    def __init__(self, name, breed):
+        super().__init__(
+            name,
+            breed,
+            5,
+        )
+        self.aggresive = True
+
     def rrrr(self):
         print("stay away!")
 
 
 class Puppy(Dog):
+    def __init__(self, name, breed):
+        super().__init__(
+            name,
+            breed,
+            0.1,
+        )
+        self.spoiled = True
+
     def woof_woof(self):
         print("Woof Woof!")
 
@@ -21,11 +40,12 @@ class Puppy(Dog):
 ruffus = Puppy(
     name="Ruffus",
     breed="Beagle",
-    age=0.1,
 )
 
-bibi = Puppy(
+bibi = GuardDog(
     name="Bibi",
     breed="Dalmatian",
-    age=0.1,
 )
+
+ruffus.woof_woof()
+bibi.rrrr()
