@@ -1,51 +1,44 @@
-# 5.5 Inheritance Part Two
+# 5.7 Code Challenge
+
+from os import name
 
 
-class Dog:
-    def __init__(self, name, breed, age):
+class Player:
+    def __init__(self, name, team):
         self.name = name
-        self.breed = breed
-        self.age = age
+        self.xp = 1500
+        self.team = team
 
-    def sleep(self):
-        print("zzzzz.....")
-
-
-class GuardDog(Dog):
-    def __init__(self, name, breed):
-        super().__init__(
-            name,
-            breed,
-            5,
-        )
-        self.aggresive = True
-
-    def rrrr(self):
-        print("stay away!")
+    def introduce(self):
+        print(f"Hello! I'm {self.name} and I play for {self.team}")
 
 
-class Puppy(Dog):
-    def __init__(self, name, breed):
-        super().__init__(
-            name,
-            breed,
-            0.1,
-        )
-        self.spoiled = True
+class Team:
+    def __init__(self, team_name):
+        self.team_name = team_name
+        self.players = []
 
-    def woof_woof(self):
-        print("Woof Woof!")
+    def add_player(self, name):
+        new_player = Player(name, self.team_name)
+        self.players.append(new_player)
 
 
-ruffus = Puppy(
-    name="Ruffus",
-    breed="Beagle",
+nico = Player(
+    name="nico",
+    team="Team X",
 )
+nico.introduce()
 
-bibi = GuardDog(
-    name="Bibi",
-    breed="Dalmatian",
+lynn = Player(
+    name="lynn",
+    team="Team Blue",
 )
+lynn.introduce()
 
-ruffus.woof_woof()
-bibi.rrrr()
+team_x = Team("Team X")
+team_x.add_player("nico")
+
+team_blue = Team("Team Blue")
+team_blue = team_blue.add_player("Lynn")
+
+print(team_blue.players)
