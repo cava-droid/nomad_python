@@ -1,7 +1,5 @@
 # 5.7 Code Challenge
 
-from os import name
-
 
 class Player:
     def __init__(self, name, team):
