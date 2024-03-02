@@ -20,23 +20,28 @@ class Team:
         new_player = Player(name, self.team_name)
         self.players.append(new_player)
 
+    def show_players(self):
+        for player in self.players:
+            player.introduce()
 
-nico = Player(
-    name="nico",
-    team="Team X",
-)
-nico.introduce()
-
-lynn = Player(
-    name="lynn",
-    team="Team Blue",
-)
-lynn.introduce()
 
 team_x = Team("Team X")
-team_x.add_player("nico")
-
 team_blue = Team("Team Blue")
-team_blue = team_blue.add_player("Lynn")
 
-print(team_blue.players)
+
+# nico = Player(
+#     name="nico",
+#     team="Team X",
+# )
+
+# lynn = Player(
+#     name="lynn",
+#     team="Team Blue",
+# )
+
+team_x.add_player("nico")
+# team_blue = team_blue.add_player("Lynn")  이렇게 쓰면 에러;;;
+team_blue.add_player("Lynn")
+
+team_x.show_players()
+team_blue.show_players()
