@@ -1,4 +1,4 @@
-# 6.5 Pagination
+# 6.7 Dynamic Scraping
 
 import requests
 from bs4 import BeautifulSoup
