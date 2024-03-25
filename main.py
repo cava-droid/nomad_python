@@ -1,4 +1,4 @@
-# 7.1 Render Template
+# 7.3 Form
 
 from flask import Flask, render_template
 
@@ -10,9 +10,9 @@ def home():
     return render_template("home.html", name="nico")
 
 
-@app.route("/hello")
+@app.route("/search")
 def hello():
-    return "hello you"
+    return render_template("search.html")
 
 
 app.run("127.0.0.1", debug=True)

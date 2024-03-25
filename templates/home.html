@@ -1,4 +1,4 @@
-<!-- 7.1 Render Template -->
+<!-- 7.3 Form -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,11 @@
     <title>JOb Scrapper</title>
   </head>
   <body>
-    <h1>Hello to You! My name is {{name}}</h1>
-    <a href="/hello">go to hello</a>
+    <h1>Job Scrapper</h1>
+    <h4>What job do you wnat?</h4>
+    <form action="/search">
+      <input type="text" name="keyword" placeholder="Write a keyword please" />
+      <button>Search</button>
+    </form>
   </body>
 </html>
