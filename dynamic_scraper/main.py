@@ -1,8 +1,9 @@
-# 6.11 Collecting Jobs
+# 6.12 Exporting to Excel
 
 from playwright.sync_api import sync_playwright
 import time
 from bs4 import BeautifulSoup
+import csv
 
 p = sync_playwright().start()
 
@@ -72,5 +73,21 @@ for job in jobs:
     }
     jobs_db.append(job)
 
-print(jobs_db)
-print(len(jobs_db))
+# mode = r 이 default
+# 한글깨짐해결 : encoding="utf-8"
+# windows 실행 시 빈 줄 추가 제거 : newline=""
+file = open("./dynamic_scraper/jobs.csv", "w", encoding="utf-8", newline="")
+writer = csv.writer(file)
+# writer.writerow는 list를 받음
+writer.writerow(
+    [
+        "Title",
+        "Company",
+        "Reward",
+        "Link",
+    ]
+)
+
+# dictionary의 value만 추출하여 list 생성 : dictionary_name.values()
+for job in jobs_db:
+    writer.writerow(job.values())
