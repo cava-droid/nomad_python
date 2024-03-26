@@ -1,4 +1,4 @@
-<!-- 7.5 Arguments -->
+<!-- 7.6 For Loops -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +11,15 @@
 
 <body>
   <h1>Search Results for "{{keyword}}":</h1>
+  <!-- for문 시작 -->
+  {% for job in jobs %}
+  <div>
+    <span>{{job.title}}</span>
+    <span>{{job.company}}</span>
+    <span>{{job.reward}}</span>
+    <a href="{{job.link}}" target="_blank">Apply now &rarr;</a>
+  </div>
+  {% endfor %}
 </body>
 
 </html>

@@ -1,6 +1,7 @@
-# 7.5 Arguments
+# 7.6 For Loops
 
 from flask import Flask, render_template, request
+from dynamic_scraper.job_scraper import scrap_jobs
 
 app = Flask("JobScrapper")
 
@@ -11,9 +12,10 @@ def home():
 
 
 @app.route("/search")
-def hello():
+def search():
     keyword = request.args.get("keyword")
-    return render_template("search.html", keyword=keyword)
+    jobs = scrap_jobs(keyword)
+    return render_template("search.html", keyword=keyword, jobs=jobs)
 
 
 app.run("127.0.0.1", debug=True)
