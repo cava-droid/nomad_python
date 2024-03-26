@@ -31,12 +31,12 @@ def scrap_jobs(keyword):
     for job in jobs:
         link = f"https://www.wanted.co.kr{job.find('a')['href']}"
         title = job.find("strong", class_="JobCard_title__ddkwM").text
-        company_name = job.find("span", class_="JobCard_companyName__vZMqJ").text
+        company = job.find("span", class_="JobCard_companyName__vZMqJ").text
         # location = job.find() # location은 없어짐;
         reward = job.find("span", class_="JobCard_reward__sdyHn").text
         job = {
             "title": title,
-            "company_name": company_name,
+            "company": company,
             "reward": reward,
             "link": link,
         }
